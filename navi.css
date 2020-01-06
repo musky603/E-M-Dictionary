@@ -1,0 +1,32 @@
+#softkeys {
+  position: fixed; bottom: 0; left: 0; width: 100%; height: 27px;
+  background-image: linear-gradient(-90deg,#BA8B02,#181818);
+  padding: 2px 4px;
+  
+}
+
+#softkeys > * {
+  display: inline-block;
+  width: 100px;
+  padding: 0 2px;
+  
+}
+
+#softkey-left, #softkey-right {
+  font-weight: bold;
+  font-size: 11px;
+  color: #ffffff;
+}
+
+#softkey-left {
+  text-align: left;
+ 
+}
+
+#softkey-right {
+  text-align: right;
+}
+
+
+  
+

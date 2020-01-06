@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500" rel="stylesheet">
+	<meta name="theme-color" content="#ffffff">
+	<title>Easy E-Dictionary-English Dictionary</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link rel="stylesheet" type="text/css" href="./navi1.css">
+	<link rel="shortcut icon" href="icons/w.png">
+	<link rel="manifest" href="./manifest.json">
+	
+</head>
+<body>
+	<header>
+    	<h1 class="center">English Dictionary</h1>
+	</header>
+
+	<div id="form">
+		<label for="searchBox">Enter Word</label>
+		<input type="text" name="word" placeholder="Search for any English word" id="searchBox">
+		<span class="errorMsg"></span>
+		<button onclick="getData()">Search</button>
+	</div>
+	<div id="result">
+		<div id="title"></div>
+		<div id="def">
+			<i><div id="partOfSpeech"></div></i>
+			<div id="defs">
+				<br>
+				<ul style="circle" id="list">
+				</ul>
+			</div>
+			<span class="noRes"></span>
+		</div>
+	</div>
+	   
+		   <div id="softkey-left"><pre>   Exit                         Back<pre></div>
+
+                  <!--  <div id="softkey-right"><pre>    Back<pre></div> -->
+        
+       
+	<script src="./app.js"></script>
+	<script src="./softkeys.js"></script>
+</body>
+</html>
