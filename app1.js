@@ -6,7 +6,8 @@ window.onload = function()
 }
 
 var url;
-async function getData()
+//Thanks a lot to jkelol111,Mr.Perry and for providing better alternative.
+ function getData() 
 {
 	document.getElementById("result").style.display="none";
 	document.getElementById("title").style.display="none";
@@ -24,11 +25,12 @@ async function getData()
 	{
 		url ="https://dictionaryapi.com/api/v3/references/medical/json/"+word
 		+"?key=c1d629ac-9c47-4e2e-9830-03aafe3e7908";
-		const def = await fetch(url);
-	 	const jsonobj = await def.json();
-	 	console.log(jsonobj[0]);
-	 	if(typeof(jsonobj[0])=="string")
-	 	{
+		return fetch(url)
+         .then(def => def.json())
+         .then(jsonobj => {
+           console.log(jsonobj[0]);
+		   if(typeof(jsonobj[0])=="string")
+	 	   {
 	 		var sugg = jsonobj[0];
 			for (var i = 1; i < jsonobj.length ; i++) 
 			{
@@ -39,9 +41,9 @@ async function getData()
 			show.style.display="block";
 	 		show.innerHTML = 'Sorry! No results found. Did you mean any of '+
 	 		sugg+ '?';
-	 	}
-	 	else
-	 	{
+	 	  }
+	 	 else
+	 	 {
 	 		var partOfSpeech = jsonobj[0].fl;
 	 		console.log(typeof(jsonobj[0]));
 		 	var defs= [];
@@ -53,12 +55,20 @@ async function getData()
 			}
 		    document.getElementById("partOfSpeech").innerHTML=partOfSpeech;
 		    document.getElementById("list").innerHTML=output;
-	 	}
-	 	
+	 	 }
+		 
+		 
 	    document.getElementById("result").style.display="flex";
 	    document.getElementById("title").style.display="block";
 	    document.getElementById("title").innerHTML=word;
 	    document.getElementById("def").style.display="block";
+		
+        });
+		//const def = await fetch(url);
+	 	//const jsonobj = await def.json();
+	 	//console.log(jsonobj[0]);
+	 	
+	 	
 	   
 	}
 	
