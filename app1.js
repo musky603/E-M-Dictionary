@@ -6,7 +6,7 @@ window.onload = function()
 }
 
 var url;
-//Thanks a lot to jkelol111,Mr.Perry and for providing better alternative.
+//Thanks a lot to jkelol111,Mr.Perry for providing better alternative.
  function getData() 
 {
 	document.getElementById("result").style.display="none";
