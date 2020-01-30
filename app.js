@@ -23,7 +23,7 @@ async function getData()
 	else
 	{
 		url ="https://dictionaryapi.com/api/v3/references/learners/json/"+word
-		+"?key=2c1ccc8b-28b5-4804-902b-0a77d2d335d6";
+		+"?key=Your GUID";
 		const def = await fetch(url);
 	 	const jsonobj = await def.json();
 	 	console.log(jsonobj[0]);
