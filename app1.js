@@ -24,7 +24,7 @@ var url;
 	else
 	{
 		url ="https://dictionaryapi.com/api/v3/references/medical/json/"+word
-		+"?key=c1d629ac-9c47-4e2e-9830-03aafe3e7908";
+		+"?key=YOUR GUID";
 		return fetch(url)
          .then(def => def.json())
          .then(jsonobj => {
